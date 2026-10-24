@@ -19,7 +19,9 @@ DuckDB star schema over Paraguayan public data, with 30 quality checks stored
 as facts rather than logged. Paraguay's two official district registers don't
 join as published — one key is zero-padded, the other isn't, so a direct join
 matches *nothing*. All 263 districts reconcile here with no hand-written
-exceptions. `82 tests · Python · DuckDB · SQL`
+exceptions. A **dbt layer** sits on top: 7 models and 28 SQL tests that restate
+the Python checks independently, so if the two ever disagree one of them is
+wrong. `82 tests + 28 dbt tests · Python · DuckDB · dbt · SQL`
 
 **[costco-fpa-model](https://github.com/Sjalegre/costco-fpa-model)** — financial modelling
 &nbsp;&nbsp;↳ **[Live model report](https://sjalegre.github.io/costco-fpa-model/)**
@@ -49,7 +51,7 @@ walk-forward · multiple-testing correction`
 
 ### Tools
 
-`SQL` `Python` (pandas, NumPy, scikit-learn) `Power BI` `DuckDB` `Excel` `EViews`
+`SQL` `dbt` `Python` (pandas, NumPy, scikit-learn) `Power BI` `DuckDB` `Excel` `EViews`
 
 ### Contact
 
